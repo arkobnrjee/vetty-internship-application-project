@@ -52,7 +52,7 @@ def index():
     if not path.exists(filename):
         return "Error: the file " + filename + " could not be found. Please check the name and location of the file and try again."
 
-    with open(filename, "r") as input_file:
+    with open(filename, "r", encoding="utf-8") as input_file:
         # Second exception case: file contains unreadable characters.
         try:
             lines = input_file.readlines()
