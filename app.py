@@ -87,7 +87,7 @@ def index():
             return "Error: the URL paramter \"end\" must be positive. Please check the \"end\" parameter and try again."
         if end_line >= len(lines):
             return "Error: the URL paramter \"end\" cannot exceed the number of lines in the file. Please check the \"end\" parameter and try again."
-        if begin > end:
+        if begin_line > end_line:
             return "Error: the URL parameter \"begin\" cannot exceed the parameter \"end\". Please specify a valid interval of lines to render and try again."
         content = "<br>".join(lines[begin_line : end_line + 1])
         return Response(content, mimetype="text/html")
