@@ -16,11 +16,11 @@ A Flask application that renders text files into HTML pages.
 
 # Prerequisites
 
-To run this project, the user should install git, pip, and venv (virtual environment for Python 3).
+To run this project, the user should install Python 3, git, pip3, and venv (virtual environment for Python 3).
 
 # Steps to Run
 1. Download this project and run it in a virtual environment with venv.
-2. Install requirements.txt using pip.
-3. Run app.py with Python 3 (this was installed in the previous step).
+2. Install requirements.txt using pip3.
+3. Run app.py with Python 3.
 4. Open the locally hosted web server link given by app.py to make get queries.
-6. For instructions regarding specifics, such as query parameters, check the documentation of app.py.
+5. For instructions regarding specifics, such as query parameters, check the documentation of app.py.
