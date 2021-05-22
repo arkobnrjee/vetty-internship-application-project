@@ -6,9 +6,11 @@ URL Parameters
         If not specified, the program renders the file "file1.txt", one of the sample files provided in this project.
     - begin: If the user wishes only for a certain section of the file to render, this variable is to specify the start line number.
         - If not specified, the program starts at the beginning of the file. This can also be accomplished by setting the begin field to the word "begin".
+        - If the file is empty, this parameter is ignored and nothing is rendered (though no error is thrown).
         - IMPORTANT NOTE: The field begin is 1-indexed. That is, counting lines starts at 1, not 0.
     - end: If the user wishes only for a certain section of the file to render, this variable is to specify the end line number.
         - If not specified, the program terminates at the end of the file. This can also be accomplished by setting the end field to the word "end".
+        - If the file is empty, this parameter is ignored and nothing is rendered (though no error is thrown).
         - IMPORTANT NOTE: The field begin is 1-indexed. That is, counting lines starts at 1, not 0.
 
 Exceptions Thrown
@@ -18,6 +20,7 @@ Exceptions Thrown
     - If the end parameter is set to a non-integer value besides the word "end", an error is thrown.
     - If the begin and end parameters do not define a valid range, an error is thrown.
         - This can happen if either parameter is out of the file's range, or if begin > end.
+        - If the file is empty, both parameters are ignored and nothing is rendered, though no error is thrown.
         
 Some examples of valid queries (note that the server name may vary):
 
@@ -55,7 +58,11 @@ def index():
             lines = input_file.readlines()
         except UnicodeDecodeError:
             return "Error: the file " + filename + " contains unreadable characters and could not be decoded."
-
+        
+        # If the file is empty, just return an empty file.
+        if not len(lines):
+            return ""
+        
         # Determine beginning and end points.
         begin_line = 0
         end_line = len(lines) - 1
