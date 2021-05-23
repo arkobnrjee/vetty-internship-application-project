@@ -3,14 +3,14 @@ This program contains the code to run the Flask application. It creates a locall
 
 URL Parameters
     - file: This field is for the name of the input text file. It can be just a file name, or a path. The program renders this file into an HTML page.
-        If not specified, the program renders the file "file1.txt", one of the sample files provided in this project.
+        - If not specified, the program renders the file "file1.txt", one of the sample files provided in this project.
     - begin: If the user wishes only for a certain section of the file to render, this variable is to specify the start line number.
         - If not specified, the program starts at the beginning of the file. This can also be accomplished by setting the begin field to the word "begin".
-        - If the file is empty, this parameter is ignored and nothing is rendered (though no error is thrown).
+        - If the file is empty, this parameter is ignored and nothing is rendered (no error is thrown).
         - IMPORTANT NOTE: The field begin is 1-indexed. That is, counting lines starts at 1, not 0.
     - end: If the user wishes only for a certain section of the file to render, this variable is to specify the end line number.
         - If not specified, the program terminates at the end of the file. This can also be accomplished by setting the end field to the word "end".
-        - If the file is empty, this parameter is ignored and nothing is rendered (though no error is thrown).
+        - If the file is empty, this parameter is ignored and nothing is rendered (no error is thrown).
         - IMPORTANT NOTE: The field begin is 1-indexed. That is, counting lines starts at 1, not 0.
 
 Exceptions Thrown
@@ -31,7 +31,7 @@ localhost:5000/?file=file2.txt&begin=2&end=3
 localhost:5000/?file=/Users/username/a.txt?begin=7
     - Renders Lines 7 through the end of the file /Users/username/a.txt (This only works if the given file actually exists).
 localhost:5000/?file=file4.txt&begin=begin&end=end
-    - Renders the entirety of file4.txt. It was not necessary to set begin=begin or end=end, but this is valid.
+    - Renders the entirety of file4.txt. It was not necessary to set begin=begin or end=end, but this is still valid.
 """
 
 
