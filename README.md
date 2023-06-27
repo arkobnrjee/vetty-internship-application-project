@@ -1,4 +1,4 @@
-# Arko-Banerjee-Vetty-Intern-Project
+# Vetty Internship Application Project
 A Flask application that renders text files into HTML pages.
 
 # Files in project
